@@ -1,9 +1,12 @@
 import axios, { AxiosResponse } from 'axios'
+import { userDetails } from '../data/userDetails'
+import LoginResponse from '../models/interfaces/LoginResponse';
 
-export async function login(): Promise<string | null> {
+
+export async function login(): Promise<LoginResponse> {
     const payload = {
-        password: "Chaponga11!",
-        userName: "mxxx"
+        password: userDetails.password,
+        userName: userDetails.username
     };
 
     try {
@@ -16,13 +19,13 @@ export async function login(): Promise<string | null> {
             });
 
         if (response.status === 200 && response.data && response.data.token) {
-            return response.data.token;
+            return response.data;
         } else {
             console.error('Login failed:', response.data);
-            return null;
+            return {} as LoginResponse;
         }
     } catch (error) {
-        console.error('Error logging in:', error);
-        return null;
+        console.error('Error logging in:', error.response ? error.response.data : error.message);
+        return {} as LoginResponse;
     }
 }

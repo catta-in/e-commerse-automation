@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "automation pet project",
   "scripts": {
-    "test": "playwright test --headed"
+    "test": "playwright test --headed",
+    "test:debug": "npx playwright@1.43.1 test -c playwright.config.ts --project=test_debug",
+    "test:api": "npx playwright@1.43.1 test -c playwright.config.ts --project=api",
+    "test:ui": "npx playwright@1.43.1 test -c playwright.config.ts --project=ui --headed"
   },
   "keywords": [],
   "author": "Olena Kryvoruka",
@@ -14,6 +17,8 @@
   },
   "dependencies": {
     "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "log4js": "^6.9.1",
     "node-fetch": "^3.3.2"
   }
 }

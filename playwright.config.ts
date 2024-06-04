@@ -11,6 +11,11 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './specs',
+  timeout: 30 * 1000,
+  expect: {
+    timeout: 5000
+  },
+  globalSetup: require.resolve('./global-setup.ts'),
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -37,6 +42,21 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
+    {
+      testMatch:
+        'specs/API/addBookToList.api.spec.ts',
+      name: 'test_debug'
+    },
+
+    {
+      testMatch: /\/specs\/API\/.*api.spec.ts/,
+      name: 'api'
+    },
+
+    {
+      testMatch: /\/specs\/UI\/.*ui.spec.ts/,
+      name: 'ui'
+    },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
