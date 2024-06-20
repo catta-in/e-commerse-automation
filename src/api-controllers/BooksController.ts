@@ -1,5 +1,5 @@
-import { AddListOfBooks, AddListOfBooksResponse, DeleteBooksFromListResponse, GetAllBooksResult } from "../../models/interfaces/Books.ts"
-import { HTTPResponse } from "../../models/interfaces/HTTPResponse.ts"
+import { AddListOfBooks, AddListOfBooksResponse, DeleteBooksFromListResponse, GetAllBooksResult } from '../models/interfaces/Books.ts'
+import { HTTPResponse } from '../models/interfaces/HTTPResponse.ts'
 import { BaseController } from "./BaseController.ts"
 
 

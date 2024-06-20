@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import * as https from 'https'
-import { HTTPResponse } from '../../../models/interfaces/HTTPResponse.ts'
-import { LoggerController } from '../../../helpers/LoggerController.ts'
+import { HTTPResponse } from '../../models/interfaces/HTTPResponse.ts'
+import { LoggerController } from '../../helpers/LoggerController.ts'
 
 export class HTTPRequest {
     private _authToken: string

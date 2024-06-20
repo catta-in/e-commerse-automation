@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios'
 import { userDetails } from '../data/userDetails'
-import LoginResponse from '../models/interfaces/LoginResponse';
+import LoginResponse from '../models/interfaces/LoginResponse.ts'
 
 
 export async function login(): Promise<LoginResponse> {
@@ -21,7 +21,7 @@ export async function login(): Promise<LoginResponse> {
         if (response.status === 200 && response.data && response.data.token) {
             return response.data;
         } else {
-            console.error('Login failed:', response.data);
+            console.error('Login failed:', 'Response data:', response.data, 'Response:', response);
             return {} as LoginResponse;
         }
     } catch (error) {

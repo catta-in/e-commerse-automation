@@ -22,7 +22,7 @@ test.describe('Add a book to the list of books for a logged in user', () => {
             const response = await booksController.getAllBooks(true)
             expect(response.data.books[0]).toHaveProperty('isbn')
             isbn = response.data.books[0].isbn
-
+            console.log(isbn)
         })
 
         await test.step('Add book to the list', async () => {
@@ -36,6 +36,7 @@ test.describe('Add a book to the list of books for a logged in user', () => {
             }
             const response = await booksController.addBooksToList(body)
             expect(response.data.books[0].isbn).toBe(isbn)
+            console.log(response.data.books)
         })
     })
 })

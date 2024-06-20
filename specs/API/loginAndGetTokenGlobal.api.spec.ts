@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { login } from '../../helpers/Login';
+import { login } from '../../src/helpers/Login'
 declare global {
     namespace NodeJS {
         interface Global {

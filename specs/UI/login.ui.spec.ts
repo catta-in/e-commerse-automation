@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
-import { userDetails } from '../../data/userDetails.ts'
-import LoginPage from '../../page-objects/pages/LoginPage.ts'
-import ProfilePage from '../../page-objects/pages/ProfilePage.ts'
+import { userDetails } from '../../src/data/userDetails.ts'
+import LoginPage from '../../src/page-objects/pages/LoginPage.ts'
+import ProfilePage from '../../src/page-objects/pages/ProfilePage.ts'
 
 const user = {
     username: userDetails.username,

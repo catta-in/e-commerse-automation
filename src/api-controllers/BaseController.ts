@@ -1,7 +1,7 @@
 import { HTTPRequest } from "./core/HTTPRequest.ts"
-import { login } from "../../helpers/Login.ts"
-import { LoggerController } from "../../helpers/LoggerController.ts"
-import { HTTPResponse } from "../../models/interfaces/HTTPResponse.ts"
+import { login } from "../helpers/Login.ts"
+import { LoggerController } from "../helpers/LoggerController.ts"
+import { HTTPResponse } from "../models/interfaces/HTTPResponse.ts"
 
 export class BaseController {
     protected logger: LoggerController
